@@ -1,6 +1,10 @@
 .calc {
-  display: block;
   background-color: lightgray;
+}
+
+.btn {
+  padding: 40px;
+  margin: 10px;
 }
 
 .calc-button {
