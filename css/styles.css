@@ -1,0 +1,12 @@
+.calc {
+  display: block;
+  background-color: lightgray;
+}
+
+.calc-button {
+  margin: 3px;
+}
+
+.flex-calc {
+  display: flex;
+}
