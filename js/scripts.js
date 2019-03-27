@@ -14,7 +14,29 @@ var divide = function(number1, number2) {
   return number1 / number2;
 };
 
-//var number1 = parseInt(prompt("Enter a number:"));
-//var number2 = parseInt(prompt("Enter another number:"));
+$(document).ready(function() {
 
-//alert(add(number1, number2));
+  $(".btn").click(function() {
+    var text = event.target.value;
+    if($("#expression").text().includes("=") == false)
+    {
+      if(event.target.value == "=")
+      {
+        $("#expression").append("=" + eval($("#expression").text()))
+      }
+      else {
+        var exp = $("#expression").text();
+        if ((exp.charAt(exp.length - 1) ==  "-" || exp.charAt(exp.length - 1) ==  "+") && (text == "+" ||  text == "-"))
+        {
+          $("#expression").text(exp.slice(0, exp.length - 1) + text);
+        }
+        else {
+          $("#expression").append(text);
+        }
+      }
+    }
+    if(event.target.id == "btn-CE")
+      $("#expression").text("");
+
+  })
+});
