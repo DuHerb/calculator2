@@ -26,7 +26,12 @@ $(document).ready(function() {
       }
       else {
         var exp = $("#expression").text();
-        if ((exp.charAt(exp.length - 1) ==  "-" || exp.charAt(exp.length - 1) ==  "+") && (text == "+" ||  text == "-"))
+        var lastsym = exp.charAt(exp.length - 1);
+        //console.log(lastsym);
+        if ((lastsym ==  "-" || lastsym ==  "+" || lastsym ==  "*" || lastsym ==  "/")
+
+
+        && (text == "+" ||  text == "-" ||  text == "*" ||  text == "/"))
         {
           $("#expression").text(exp.slice(0, exp.length - 1) + text);
         }
